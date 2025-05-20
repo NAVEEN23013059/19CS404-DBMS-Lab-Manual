@@ -1,5 +1,8 @@
 # Experiment 1: Entity-Relationship (ER) Diagram
 
+## devoloped by: naveen.s
+## register number:212223240106
+
 ## Scenario Chosen:
 Hospital
 
