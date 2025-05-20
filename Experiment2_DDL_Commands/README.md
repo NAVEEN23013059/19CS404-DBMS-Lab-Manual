@@ -5,6 +5,9 @@ To study and implement DDL commands and different types of constraints.
 
 ## THEORY
 
+## devoloped by:NAVEEN.S
+## REGISTER NUMBER:212223240106
+
 ### 1. CREATE
 Used to create a new relation (table).
 
@@ -104,124 +107,187 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+![image](https://github.com/user-attachments/assets/219bf5e2-9208-4c6f-8229-e1a9c0b2d545)
 
 ```sql
--- Paste your SQL code below for Question 1
+CREATE TABLE Orders(
+ OrderID INTEGER PRIMARY KEY,
+ OrderDate DATE NOT NULL,
+ CustomerID INTEGER,
+ FOREIGN KEY(CustomerID) REFERENCES CustomerS(CustomerID)
+ );
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/6709e358-ded9-4297-b80c-2dd36c2d62dc)
 
 **Question 2**
----
--- Paste Question 2 here
+
+![image](https://github.com/user-attachments/assets/dcc48243-a82c-41c8-9b34-b26f240bf572)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE item(
+ item_id TEXT PRIMARY KEY,
+ item_desc TEXT NOT NULL,
+ rate INTEGER NOT NULL,
+ icom_id TEXT CHECK (length(icom_id = 4)),
+ FOREIGN KEY (icom_id) REFERENCES company(com_id)
+ ON UPDATE CASCADE
+ ON DELETE CASCADE
+ );
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/a2122bb7-2821-40b5-bba7-3a4f365aada3)
 
 **Question 3**
----
--- Paste Question 3 here
+
+![image](https://github.com/user-attachments/assets/17220573-306d-44a6-bab5-f2a1b50c420f)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+INSERT INTO Customers (CustomerID, Name,Address,City,ZipCode)
+VALUES (302, 'Laura Croft', '456 Elm St','Seattle', 98101);
+
+INSERT INTO Customers (CustomerID, Name,Address,City,ZipCode)
+VALUES (303, 'Bruce Wayne', '789 Oak St ','Gotham ', 10001);
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/c9f8889e-0893-46ef-95e8-50fa91250ed6)
+
 
 **Question 4**
----
--- Paste Question 4 here
+
+![image](https://github.com/user-attachments/assets/f23ccb5d-4675-4b45-a582-732fe6cfc116)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE  Reviews(
+    ReviewID  INTEGER,
+    ProductID  INTEGER,
+    Rating REAL,
+    ReviewText TEXT
+);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/7365cb07-a963-4b90-bd7e-5e7cea3cdec9)
 
-![Output4](output.png)
+
 
 **Question 5**
----
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/e3b31a9f-99c4-469f-8c95-cc4b85ce6ae4)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+ALTER TABLE employee
+ADD COLUMN department_id INTEGER;
+
+ALTER TABLE employee
+ADD COLUMN manager_id INTEGER DEFAULT NULL;
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/ab3f86bd-0580-4a79-b5ab-4f9f28a483da)
+
 
 **Question 6**
----
--- Paste Question 6 here
+
+![image](https://github.com/user-attachments/assets/7bd765ab-79f8-4d55-8869-195293bc88f4)
 
 ```sql
--- Paste your SQL code below for Question 6
+INSERT INTO Products( ProductID, ProductName, Price, Stock)
+SELECT ProductID, ProductName, Price, Stock
+FROM Discontinued_products;
 ```
+
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/c6a8d724-84fa-404b-a372-345634603889)
+
 
 **Question 7**
----
--- Paste Question 7 here
+
+![image](https://github.com/user-attachments/assets/0535afec-4e16-4ac3-b3b0-fae3d06529e3)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE products (
+    product_id INTEGER PRIMARY KEY,
+    product_name TEXT NOT NULL,
+    list_price DECIMAL(10, 2) NOT NULL,
+    discount DECIMAL(10, 2) NOT NULL DEFAULT 0,
+    CHECK (list_price >= discount),
+    CHECK (discount >= 0),
+    CHECK (list_price >= 0)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/01b7b738-3e54-4288-8373-d864b6fa6cb2)
 
 **Question 8**
----
--- Paste Question 8 here
+
+![image](https://github.com/user-attachments/assets/67b2ca3e-6486-472f-97f2-d5f24a91f944)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+ALTER TABLE Companies
+ADD COLUMN designation varchar(50);
+
+ALTER TABLE Companies
+ADD COLUMN net_salary number;
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/88d6a2ed-1baf-4599-8ae6-f11e435e12bd)
 
-![Output8](output.png)
+
 
 **Question 9**
----
--- Paste Question 9 here
+
+![image](https://github.com/user-attachments/assets/2182ae38-63f6-4014-815f-9b8ae9632a5a)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE orders (
+    ord_id TEXT NOT NULL CHECK (LENGTH(ord_id) = 4),
+    item_id TEXT NOT NULL,
+    ord_date DATE,
+    ord_qty INTEGER,
+    cost INTEGER,
+    PRIMARY KEY (item_id, ord_date)
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/d1092dbf-8484-48a2-b805-9dd8982bc67c)
+
 
 **Question 10**
----
--- Paste Question 10 here
+
+![image](https://github.com/user-attachments/assets/4333c8c6-f8a5-495a-af25-bafd3a25e27b)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Employee (EmployeeID, Name, Position)
+VALUES (4, 'Emily White', 'Analyst');
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/01e7b248-9972-4263-b5e4-4754d0327def)
 
 
 ## RESULT
