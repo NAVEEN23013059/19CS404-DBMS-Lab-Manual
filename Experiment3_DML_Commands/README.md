@@ -204,6 +204,11 @@ WHERE AGENT_CODE IN ('A003', 'A008');
 
 ![image](https://github.com/user-attachments/assets/46f39bd1-21b8-4724-b47b-53099e272de6)
 
+## GRADE
+
+<img width="1367" height="78" alt="image" src="https://github.com/user-attachments/assets/a6857546-979c-47c5-8980-1f95e6345155" />
+
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
