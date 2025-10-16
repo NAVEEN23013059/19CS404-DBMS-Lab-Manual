@@ -289,6 +289,10 @@ VALUES (4, 'Emily White', 'Analyst');
 
 ![image](https://github.com/user-attachments/assets/01e7b248-9972-4263-b5e4-4754d0327def)
 
+## GRADE:
+
+<img width="1367" height="74" alt="image" src="https://github.com/user-attachments/assets/223f3e8b-c710-4172-acf3-bb0ef8e6d121" />
+
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
