@@ -41,92 +41,105 @@ HAVING condition;
 
 **Question 1**
 
-![image](https://github.com/user-attachments/assets/6d478a1e-f402-4d9b-b1b4-82acd1ca3b6a)
+<img width="1286" height="670" alt="image" src="https://github.com/user-attachments/assets/31976ea0-75bf-4243-9666-bf081b0d1453" />
 
 
 ```sql
-SELECT Diagnosis, COUNT(*) AS DiagnosisCount
-FROM MedicalRecords
-GROUP BY Diagnosis
-ORDER BY DiagnosisCount DESC
-LIMIT 1;
+SELECT *
+FROM Employee
+WHERE age < (
+    SELECT AVG(age)
+    FROM Employee
+    WHERE income > 250000
+);
+
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/21e78e1e-a092-4e23-a4f1-df3f6255446b)
+<img width="1263" height="525" alt="image" src="https://github.com/user-attachments/assets/7a7b097e-39cf-4878-bb42-58976b987cd8" />
 
 
 **Question 2**
 
-![image](https://github.com/user-attachments/assets/ead773fb-d4d6-4f4b-9c02-a9cb011f8e9b)
+<img width="1285" height="589" alt="image" src="https://github.com/user-attachments/assets/f29ef182-1721-48e1-86ce-6164b768274e" />
 
 
 ```sql
-SELECT 
-  Specialty,
-  Gender,
-  COUNT(*) AS TotalDoctors
-FROM Doctors
-GROUP BY Specialty, Gender
-ORDER BY Specialty, Gender;
+SELECT ord_no, purch_amt, ord_date, customer_id, salesman_id
+FROM orders
+WHERE salesman_id IN (
+    SELECT salesman_id
+    FROM orders
+    WHERE customer_id = 3007
+);
+
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/0df250ba-82ff-4b1d-8010-0c289f6e6a6d)
+<img width="1286" height="551" alt="image" src="https://github.com/user-attachments/assets/2b6aaf32-b76b-4f5d-9cbd-9defe8f04f4c" />
 
 **Question 3**
 
-![image](https://github.com/user-attachments/assets/f37d5384-c40e-4888-be9d-067a2dfd521f)
+<img width="1288" height="525" alt="image" src="https://github.com/user-attachments/assets/32385514-e97d-4d13-9d3b-bdbc33e1b3ad" />
 
 
 ```sql
-SELECT 
-  Address,
-  COUNT(*) AS TotalPatients
-FROM Patients
-GROUP BY Address
-ORDER BY Address;
+SELECT customer_id, cust_name, city, grade, salesman_id
+FROM customer
+WHERE customer_id = (
+    SELECT salesman_id - 2001
+    FROM salesman
+    WHERE name = 'Mc Lyon'
+);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/a780c5d8-c7e8-4f6e-a618-4f9842285403)
+<img width="1288" height="425" alt="image" src="https://github.com/user-attachments/assets/06d7d140-f642-4ec6-899d-31b3c0985e8e" />
 
 
 **Question 4**
 
-![image](https://github.com/user-attachments/assets/99fbc0ee-4eab-4951-8329-b893fb6899d6)
+<img width="1285" height="664" alt="image" src="https://github.com/user-attachments/assets/eb712385-f52e-42e0-b396-a6790cfeb438" />
 
 
 
 ```sql
-SELECT 
-  SUM(purch_amt) AS TOTAL
-FROM orders;
+SELECT student_name, grade
+FROM grades g
+WHERE grade = (
+    SELECT MIN(grade)
+    FROM grades
+    WHERE subject = g.subject
+);
+
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/42323470-da2a-480d-ada5-7696509c260c)
+<img width="1286" height="477" alt="image" src="https://github.com/user-attachments/assets/5fc7ad34-691c-4fcb-a95a-5dcbef7db25f" />
 
 
 **Question 5**
 
-![image](https://github.com/user-attachments/assets/cf422229-bf29-4df5-a8ba-42c28e84fe93)
+<img width="1273" height="614" alt="image" src="https://github.com/user-attachments/assets/ac7cce0f-0575-495f-b974-ff3fb4a4334e" />
 
 
 ```sql
-SELECT 
-  COUNT(*) AS COUNT
-FROM employee
-WHERE age > 32;
+SELECT ord_no, purch_amt, ord_date, customer_id, salesman_id
+FROM orders
+WHERE purch_amt > (
+    SELECT AVG(purch_amt)
+    FROM orders
+    WHERE ord_date = '2012-10-10'
+);
 ```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/5f6bcb0e-eaa3-4c0d-98b8-c49faaeefc45)
+<img width="1285" height="487" alt="image" src="https://github.com/user-attachments/assets/5b98c443-5c04-4f9c-82ac-2bdb206fb25a" />
 
 
 **Question 6**
@@ -216,6 +229,9 @@ HAVING AVG(income) BETWEEN 300000 AND 500000;
 
 ![image](https://github.com/user-attachments/assets/8689ff22-a9cd-4034-99a4-fbf98f2662aa)
 
+## GRADE
+
+<img width="1452" height="80" alt="image" src="https://github.com/user-attachments/assets/9de9c271-70aa-403c-8859-1997e79ca736" />
 
 
 ## RESULT
