@@ -1,8 +1,8 @@
 # Experiment 7: PL/SQL – Variables, Control Structures and Loops
 
-
-## DEVOLOPED BY: NAVEEN.S
+## DEVELOPED BY: NAVEEN.S
 ## REGISTER NUMBER: 212223240106
+
 ## AIM
 To write and execute simple PL/SQL programs using variables, loops, and conditional statements.
 
@@ -32,7 +32,15 @@ END;
 
 ## 1. Write a PL/SQL program to find the Greatest of Two Numbers
 
-### Program:
+### Steps:
+- Declare two numeric variables and initialize them.
+- Use an `IF` statement to compare the values.
+- Display the greater number using `DBMS_OUTPUT.PUT_LINE`.
+
+**Expected Output:**  
+Greater number is: 80
+
+### Program
 ```
 DECLARE
     num1 NUMBER := 80;  -- First number
@@ -45,23 +53,23 @@ BEGIN
     END IF;
 END;
 ```
+### Output
 
-### Steps:
-- Declare two numeric variables and initialize them.
-- Use an `IF` statement to compare the values.
-- Display the greater number using `DBMS_OUTPUT.PUT_LINE`.
+<img width="502" height="351" alt="image" src="https://github.com/user-attachments/assets/e235e444-6f64-4280-9cc9-9445d94f275d" />
 
-**Expected Output:**  
-Greater number is: 80
-
-### Output: 
-
-![image](https://github.com/user-attachments/assets/d8760b04-7cfb-4308-b274-fbcb5cb55354)
-
+---
 
 ## 2. Write a PL/SQL program to Calculate Sum of First N Natural Numbers
 
-### Program:
+### Steps:
+- Declare a variable `n` and assign a value (e.g., 10).
+- Initialize a `sum` variable to 0.
+- Use a `WHILE` loop to iterate from 1 to `n`, adding each number to the sum.
+- Display the result using `DBMS_OUTPUT.PUT_LINE`.
+
+**Expected Output:**  
+Sum of first 10 natural numbers is: 55
+### Program
 ```
 SET SERVEROUTPUT ON;
 
@@ -78,24 +86,26 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Sum of first ' || n || ' natural numbers is: ' || total_sum);
 END;
 ```
+### output
 
-### Steps:
-- Declare a variable `n` and assign a value (e.g., 10).
-- Initialize a `sum` variable to 0.
-- Use a `WHILE` loop to iterate from 1 to `n`, adding each number to the sum.
-- Display the result using `DBMS_OUTPUT.PUT_LINE`.
+<img width="796" height="340" alt="image" src="https://github.com/user-attachments/assets/aeb7b71c-f10f-456e-9bda-b28b8f7844df" />
 
-**Expected Output:**  
-Sum of first 10 natural numbers is: 55
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/2b4b7fa2-ace7-4ef0-a1ed-74b9ee6d8854)
-
+---
 
 ## 3. Write a PL/SQL program to generate Fibonacci series
 
-### Program:
+### Steps:
+- Declare the variable `n` to indicate how many terms to generate.
+- Initialize the first two Fibonacci numbers (0 and 1).
+- Use a loop to generate the next terms using the formula `c = a + b`.
+- Print each term in the series.
+
+**Expected Output:**  
+n = 7  
+Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
+
+### Program
+
 ```
 SET SERVEROUTPUT ON;
 
@@ -120,24 +130,24 @@ BEGIN
 END;
 ```
 
-### Steps:
-- Declare the variable `n` to indicate how many terms to generate.
-- Initialize the first two Fibonacci numbers (0 and 1).
-- Use a loop to generate the next terms using the formula `c = a + b`.
-- Print each term in the series.
+### Output
 
-**Expected Output:**  
-n = 7  
-Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
+<img width="587" height="316" alt="image" src="https://github.com/user-attachments/assets/26e6b3fb-9a6e-4d8b-aaea-528a15e6a926" />
 
-### Output:
-
-![image](https://github.com/user-attachments/assets/bb3a4da7-fb25-4616-8e45-c31255bb22a5)
-
+---
 
 ## 4. Write a PL/SQL Program to display the number in Reverse Order
 
-### Program:
+### Steps:
+- Declare a variable `n` and assign a value (e.g., 1535).
+- Use a loop to extract each digit using modulo and reverse the number.
+- Display the reversed number.
+
+**Expected Output:**  
+n = 1535  
+Reversed number is 5351
+
+### Program
 ```
 SET SERVEROUTPUT ON;
 
@@ -158,23 +168,24 @@ BEGIN
 END;
 ```
 
-### Steps:
-- Declare a variable `n` and assign a value (e.g., 1535).
-- Use a loop to extract each digit using modulo and reverse the number.
-- Display the reversed number.
+### Output
 
-**Expected Output:**  
-n = 1535  
-Reversed number is 5351
+<img width="798" height="288" alt="image" src="https://github.com/user-attachments/assets/5c261cf5-0b6e-4cbc-942e-61c0e6e990dd" />
 
-### Output:
-
-![image](https://github.com/user-attachments/assets/fdad8535-0f89-44a3-893c-34184a3cca9f)
-
+---
 
 ## 5. Write a PL/SQL program to find the largest of three numbers
 
-### Program:
+### Steps:
+- Declare three numeric variables `a`, `b`, and `c`.
+- Use nested `IF-ELSIF-ELSE` conditions to find the largest among the three.
+- Display the largest number.
+
+**Expected Output:**  
+a = 10, b = 9, c = 15  
+Largest of three number is 15
+
+### Program
 ```
 SET SERVEROUTPUT ON;
 
@@ -197,19 +208,12 @@ BEGIN
 END;
 ```
 
-### Steps:
-- Declare three numeric variables `a`, `b`, and `c`.
-- Use nested `IF-ELSIF-ELSE` conditions to find the largest among the three.
-- Display the largest number.
+### Output
 
-**Expected Output:**  
-a = 10, b = 9, c = 15  
-Largest of three number is 15
-
-### Output:
-
-![image](https://github.com/user-attachments/assets/63e79618-7471-4a54-bce4-6416fca17d9a)
-
+<img width="706" height="353" alt="image" src="https://github.com/user-attachments/assets/1fb14167-c86f-4d9d-b99e-175687eae6aa" />
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
+
+
+
